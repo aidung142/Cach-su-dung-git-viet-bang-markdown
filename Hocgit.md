@@ -194,3 +194,125 @@ git restore --staged .
 git checkout -- . 
 ```
 
+# Nhánh
+
+1. **Lệnh xác định nhánh **
+
+   ```
+   git branch
+   ```
+
+   ![image-20211030001721388](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030001721388.png)
+
+đang ở nhánh master 
+
+2. **Tạo một nhánh mới**
+
+   tạo một nhánh mới alpha
+
+   ```
+   git branch alpha
+   ```
+
+   
+
+![image-20211030002131100](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030002131100.png)
+
+Đã có 2 nhánh alpha và master 
+
+chuyển sang làm việc nhánh khác. ví dụ ở đây nhánh alpha 
+
+```
+git checkout alpha
+```
+
+bây giờ con trỏ được chuyển về nhánh alpha
+
+![image-20211030002437861](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030002437861.png)
+
+chuyển lại về nhánh master: 
+
+```
+git switch master
+```
+
+![image-20211030002658932](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030002658932.png)
+
+điểm nối chung là ở "lan cuoi- xoa file vo van"
+
+4. **Tách nhánh**
+
+   ```
+   git switch alpha
+   ```
+
+   đưa con trỏ về lại alpha
+
+   ta lập thêm một file mới 
+
+   Thực hiện lệnh 
+
+   ```
+   git add .
+   ```
+
+   để đưa các file mới lập vào nhánh alpha 
+
+commit lại 
+
+![image-20211030003644608](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030003644608.png)
+
+Ta thấy hiện tại ở nhánh alpha đã thực hiện thêm 1 commit còn nhánh master vẫn đang ở "lan cuoi"
+
+5. **Gộp nhánh **
+
+   ví dụ ta tạo thêm một nhánh gọi là sualoi 
+
+   ![image-20211030004903101](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030004903101.png)
+
+ở đây cả nhánh master và sửa lỗi đều đang ở vị trí C0 
+
+Thay đổi và commit tại nhánh sualoi 
+
+![image-20211030005114890](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030005114890.png)
+
+thực hiện thay đổi các file khi ở nhánh sualoi
+
+commit nhánh sualoi 
+
+sau khi đã sửa đổi và commit ta có như sau
+
+![image-20211030005306353](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030005306353.png)
+
+Bây giờ muốn nhập các thay đổi ở nhánh sualoi vào master ta làm 
+
+đưa về vị trí master
+
+```
+git switch master
+```
+
+gộp nhánh sửa lỗi vào bằng lệnh: 
+
+```
+git merge sualoi
+```
+
+
+
+![image-20211030005957553](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030005957553.png)
+
+Kiểm tra lại commit "c1" đã được đưa vào master
+
+Cần chú ý khi gộp nhánh xem có file nào cở cả 2 cùng sửa để tránh xung đột
+
+6. **xóa nhánh **
+
+ví dụ xóa nhánh sualoi 
+
+```
+git branch -d sualoi
+```
+
+![image-20211030010454704](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030010454704.png)
+
