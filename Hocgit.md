@@ -316,3 +316,6 @@ git branch -d sualoi
 
 ![image-20211030010454704](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20211030010454704.png)
 
+7. Test image local
+
+![abcjgv](images/local01.png)
