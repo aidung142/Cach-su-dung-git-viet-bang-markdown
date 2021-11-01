@@ -318,4 +318,4 @@ git branch -d sualoi
 
 7. Test image local
 
-![abcjgv](images/local01.png)
+![abcjgv](../images/local01.png)
